@@ -1,4 +1,4 @@
-import users from '../data/users.js';
+import {users} from '../data/users.js';
 import { generateToken, verifyToken } from '../utils/auth.js';
 
 function sendJSONResponse(res, statusCode, data) {
@@ -6,7 +6,7 @@ function sendJSONResponse(res, statusCode, data) {
   res.end(JSON.stringify(data));
 }
 
-function registerUser(req, res) {
+export function registerUser(req, res) {
   let body = '';
   req.on('data', chunk => {
     body += chunk.toString();
